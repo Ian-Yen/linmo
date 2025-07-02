@@ -8,7 +8,7 @@ void task2(void)
     while (1) {
         time = mo_uptime();
         secs = time / 1000;
-        msecs = time - secs * 1000;
+        msecs = time % 1000;
         printf("[task %d %ld - sys uptime: %ld.%03lds]\n", mo_task_id(), cnt++,
                secs, msecs);
         mo_task_wfi();
